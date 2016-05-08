@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :warehouses
   get 'warehouses/index'
 
   get 'warehouses/show'
