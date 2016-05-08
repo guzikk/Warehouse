@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'warehouses/index'
+
+  get 'warehouses/show'
+
+  get 'warehouses/edit'
+
   devise_for :admins
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
