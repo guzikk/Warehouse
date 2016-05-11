@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
-  resources :warehouses
-  get 'warehouses/index'
+  
+  #match ':controller(/:action(/:id))', :via => [:get, :post]
+  resources :warehouses do
+    member do
+      get 'delete'
+    end
+  end
+  #get 'warehouses/:id' => 'warehouses#delete'
 
-  get 'warehouses/show'
+  #get 'warehouses/show'
 
-  get 'warehouses/edit'
+  #get 'warehouses/edit'
 
   devise_for :admins
-  devise_for :users
+ 
+devise_for :users
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  root 'warehouses#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

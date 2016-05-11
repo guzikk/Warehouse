@@ -1,0 +1,8 @@
+Delete Product
+<%= form_for(:product, url:{action: 'destroy', id:@product.id }, method: :delete) do |f| %>
+	Are you sure to delete Product 
+	<p class="text-warning"> <%=@product.name%> </p>
+	<div> 
+	<%= link_to('Back', {action:'index'}, class:'btn btn-primary')%>
+	<%= submit_tag('Delete', class:'btn btn-danger')%>
+	<%end%>

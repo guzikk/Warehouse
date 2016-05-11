@@ -1,6 +1,4 @@
-<h1>Add new product to warehouse</h1>
-<%= form_for (@product), url: {action: "create"} do |f| %>
-	<%= f.label :name %> <br>
+<%= f.label :name %> <br>
 	<%= f.text_field :name %> <br>
 	<%= f.label :description %> <br>
 	<%= f.text_area :description %> <br>
@@ -11,4 +9,3 @@
 	<%= f.label :image %> <br>
 	<%= f.file_field :image %> <br>
 	<%= f.submit :submit %> <br>
-<%end%>

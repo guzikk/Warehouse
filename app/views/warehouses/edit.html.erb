@@ -1,2 +1,6 @@
-<h1>Warehouses#edit</h1>
-<p>Find me in app/views/warehouses/edit.html.erb</p>
+<h1>Edit product</h1>
+<%= form_for(:product, url:{action:'update', id:@product.id}, method: :put ) do |field| %>
+<%= render(partial: 'form', locals:{f: field})%>
+<%=link_to('Back', {action: 'index'}, class: 'btn btn-warning')%>
+<%=submit_tag('update', class:'btn btn-primary') %>
+<%end%>
