@@ -1,6 +1,8 @@
+
 <div class="page-header">
 <h1>Add new product to warehouse</h1>
 </div>
+
 
 <%= form_for(:product, url:{action:'create', id:@product.id}, method: :post ) do |field| %>
 <%= render(partial: 'form', locals:{product: field})%>

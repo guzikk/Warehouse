@@ -54,8 +54,7 @@
               <%end%>
             
             <% if user_signed_in? %>
-              <li> <%= link_to current_user.email, edit_user_registration_path %></li>
-              <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+               <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <%else%>
               <li> <%= link_to "Login", new_user_session_path %></li>
             <%end%>
@@ -64,15 +63,25 @@
       </div>
     </div>
 
+
         <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+      <div class="col-lg-3">
+      <% if user_signed_in? %>
+             <h5> User: <%=current_user.email%> </h5>
+              <%end%>
+        </div>
+        <div class="col-lg-6 margin">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-      
+      <div class="col-lg-3">
+        </div>
       </div><!--/row-->
     </div> <!-- /container -->
 
   </body>
 </html>
+
+
+
