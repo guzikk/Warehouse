@@ -6,7 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u = Admin.new(:email => "admin@wisemedia.ee", :password => 'password',
-:password_confirmation => 'password')
-u.save
-p 'Admin created'
+Admin.create(email:'admin@wisemedia.ee', password:'password',
+password_confirmation:'password')
+
+Category.create(name:'Electronics')
+Category.create(name:'Computers')
+Category.create(name:'Phones')
+Category.create(name:'Watches')
+
+p 'Data created'

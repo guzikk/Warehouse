@@ -1,11 +1,22 @@
-<%= f.label :name %> <br>
-	<%= f.text_field :name %> <br>
-	<%= f.label :description %> <br>
-	<%= f.text_area :description %> <br>
-	<%= f.label :price %> <br>
-	<%= f.text_field :price %> <br>
-	<%= f.label :category %> <br>
-	<%= f.select_tag :filter_var, options_for_select([["Status",:status],["Kind",:kind],["Invoice Number",:invoice_num],["Reporter",:reporter]]) %> <br>
-	<%= f.label :image %> <br>
-	<%= f.file_field :image %> <br>
-	<%= f.submit :submit %> <br>
+
+	<%= product.label :name %> <br>
+	<%= product.text_field :name %> <br>
+	<%= product.label :description %> <br>
+	<%= product.text_area :description %> <br>
+	<%= product.label :price %> <br>
+	<%= product.text_field :price %> <br>
+	<%= product.label :category %> <br>
+	
+	<% Category.all.each do |category|%>
+		
+		<%= check_box_tag "product[category_ids][]", category.id, @product.categories.include?(category) %>
+        <%= category.name %>
+    <% end %>
+
+<br>
+ 
+<%= product.label :image %> <br>
+	<%= product.file_field :image %> <br>
+
+
+
