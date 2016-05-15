@@ -1,26 +1,24 @@
-<div class="page-header">
-<h1>Product: <%= @product.name%></h1>
+<div class='page-header'>
+	<h1>Product: <%= @product.name%></h1>
 </div>
 <%= image_tag @product.image if @product.image_file_name != nil%>
+<table class='table font margin'>
+	<tr>
+		<th>Description:</th>
+		<th>Price: </th>
+		<th>Category:</th>
+	</tr>
 
-<table class="table font margin">
-<tr>
-	<th> Description: </th>
-	<th>Price: </th>
-	<th>Category: </th>
-</tr>
-<tr>
-	<th> <%= @product.description%>  </th>
-	<th><%= @product.price %> </th>
-	<th><% @product.categories.each do |category| %>
-<%=category.name%>; <%end%></th>
-</tr>
-
+	<tr>
+		<td><%= @product.description%></td>
+		<td><%= @product.price %></td>
+		<td><% @product.categories.each do |category| %>
+				<%= category.name%>; 
+			<%end%></td>
+	</tr>
 </table>
 
-
-
-	<%= link_to('Back', {action:'index'}, class:'btn btn-primary')%>
-		<%= link_to('Edit', {:action=>'edit', :id=>@product.id}, class: "btn btn-primary")%>
+<%= link_to('Back', {action:'index'}, class:'btn btn-primary')%>
+<%= link_to('Edit', {action:'edit', id:@product.id}, class: 'btn btn-primary')%>
 
 		

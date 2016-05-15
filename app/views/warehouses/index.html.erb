@@ -1,23 +1,22 @@
-<div class="page-header">
-<h1>All Products</h1>
+<div class='page-header'>
+	<h1>All Products</h1>
 </div>
-<table class="table table-striped">
-		<tr class="info">
-			<th>Product name</th>
-			<th>Price</th>
-			<th>Operation</th>
-		</tr>
+<table class='table table-striped'>
+	<tr class='info'>
+		<th>Product name</th>
+		<th>Price</th>
+		<th>Operation</th>
+	</tr>
 
-<% @products.each do |product|%>
+	<% @products.each do |product|%>
 		<tr>
-			<td class="center"><%= product.name %></td>
-			<td class="center"><%= product.price %></td>
-			<td class="actions">
-			<%= link_to('Show', {:action=>'show', :id=>product.id}, class: "btn btn-xs btn-default")%>
-			<%= link_to('Edit', {:action=>'edit', :id=>product.id}, class: "btn btn-xs btn-primary")%>
-			<%= link_to('Delete', {:action=>'delete', :id=>product.id}, class: "btn btn-xs btn-danger")%> 
+			<td class='center'><%= product.name%></td>
+			<td class='center'><%= product.price%></td>
+			<td class='actions'>
+				<%= link_to('Show', {action: 'show', id: product.id}, class: 'btn btn-xs btn-default')%>
+				<%= link_to('Edit', {action: 'edit', id: product.id}, class: 'btn btn-xs btn-primary')%>
+				<%= link_to('Delete', {action: 'delete', id: product.id}, class: 'btn btn-xs btn-danger')%> 
 			</td>
 		</tr>
-	  
-<%end%>
+	<%end%>
 </table>

@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Admin.create(email:'admin@wisemedia.ee', password:'password',
-password_confirmation:'password')
+Admin.create(email:'admin@wisemedia.ee', password:'password', password_confirmation:'password')
+User.create(email:'user@wisemedia.ee', password:'password', password_confirmation:'password')
 
 Category.create(name:'Electronics')
 Category.create(name:'Computers')

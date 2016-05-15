@@ -1,27 +1,20 @@
 Rails.application.routes.draw do
-  
-  #match ':controller(/:action(/:id))', :via => [:get, :post]
   resources :warehouses do
     member do
       get 'delete'
     end
   end
-  #get 'warehouses/:id' => 'warehouses#delete'
-
-  #get 'warehouses/show'
-
-  #get 'warehouses/edit'
 
   devise_for :admins
-  as :admin do
-    get 'amins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
-    put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
+    as :admin do
+      get 'amins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
+      put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
   end
  
-devise_for :users
-  as :user do
-    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
-    put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  devise_for :users
+    as :user do
+      get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+      put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

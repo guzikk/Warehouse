@@ -1,22 +1,19 @@
 
-	<%= product.label :name %> <br>
-	<%= product.text_field :name %> <br>
-	<%= product.label :description %> <br>
-	<%= product.text_area :description %> <br>
-	<%= product.label :price %> <br>
-	<%= product.text_field :price %> <br>
-	<%= product.label :category %> <br>
+<%= product.label :name %> <br>
+<%= product.text_field :name %> <br>
+<%= product.label :description %> <br>
+<%= product.text_area :description %> <br>
+<%= product.label :price %> <br>
+<%= product.text_field :price %> <br>
+<%= product.label :category %> <br>
 	
-	<% Category.all.each do |category|%>
-		
-		<%= check_box_tag "product[category_ids][]", category.id, @product.categories.include?(category) %>
-        <%= category.name %>
-    <% end %>
-
+<% Category.all.each do |category|%>
+	<%= check_box_tag 'product[category_ids][]', category.id, @product.categories.include?(category) %>
+	<%= category.name %>
+<% end %>
 <br>
- 
 <%= product.label :image %> <br>
-	<%= product.file_field :image %> <br>
+<%= product.file_field :image %> <br>
 
 
 

@@ -1,12 +1,12 @@
-<div class="page-header">
-<h1> Delete Product </h1>
+<div class='page-header'>
+	<h1> Delete Product </h1>
 </div>
-<div class="font">
-<%= form_for(:product, url:{action: 'destroy', id:@product.id }, method: :delete) do |f| %>
-	Are you sure to delete Product: <%=@product.name%> 
-	<p class="margin"> 
-	<%= link_to('Back', {action:'index'}, class:'btn btn-primary')%>
-	<%= submit_tag('Delete', class:'btn btn-danger')%>
-	</p>
+<div class='font'>
+	<%= form_for(:product, url:{action: 'destroy', id:@product.id }, method: :delete) do |f| %>
+		Are you sure to delete Product: <%= @product.name%> 
+		<p class='margin'> 
+			<%= link_to('Back', {action:'index'}, class:'btn btn-primary')%>
+			<%= submit_tag('Delete', class:'btn btn-danger')%>
+		</p>
 	<%end%>
 </div>
